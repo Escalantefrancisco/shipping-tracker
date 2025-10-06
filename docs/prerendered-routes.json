@@ -1,0 +1,7 @@
+{
+  "routes": {
+    "/shipping-tracker": {},
+    "/shipping-tracker/track": {},
+    "/shipping-tracker/update": {}
+  }
+}
