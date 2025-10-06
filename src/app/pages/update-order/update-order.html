@@ -1,0 +1,28 @@
+<h2>Actualizar Orden</h2>
+<form [formGroup]="searchForm" (ngSubmit)="search()">
+  <label>Número de paquete:</label>
+  <input formControlName="packageNumber" />
+  <button type="submit">Buscar</button>
+</form>
+<div *ngIf="found">
+  <form [formGroup]="updateForm" (ngSubmit)="applyUpdate()">
+    <label>Nuevo estado:</label>
+    <select formControlName="status">
+      <option *ngFor="let s of allowedNextStatuses" [value]="s">{{ s }}</option>
+    </select>
+    <br />
+    <label>Comentario:</label>
+    <input formControlName="comment" />
+    <br />
+    <label>Responsable:</label>
+    <input formControlName="responsible" />
+    <br />
+    <button type="submit">Actualizar</button>
+  </form>
+  <h3>Historial de actualizaciones:</h3>
+  <ul>
+    <li *ngFor="let update of found.updates">
+      {{ update.date }} - {{ update.status }} - {{ update.comment }} - {{ update.responsible }}
+    </li>
+  </ul>
+</div>

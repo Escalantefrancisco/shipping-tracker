@@ -1,0 +1,20 @@
+<h2>Crear Orden</h2>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label>Nombre del remitente:</label>
+  <input formControlName="senderName" />
+  <br />
+  <label>Dirección de entrega:</label>
+  <input formControlName="deliveryAddress" />
+  <br />
+  <label>Email:</label>
+  <input formControlName="email" />
+  <br />
+  <label>Descripción:</label>
+  <textarea formControlName="description"></textarea>
+  <br />
+  <button type="submit">Crear</button>
+  <div *ngIf="createdOrder" style="margin-top:1rem;padding:1rem;border:1px solid #ccc;background:#fafafa;">
+    <h3>¡Orden creada exitosamente!</h3>
+    <p><strong>Código de rastreo:</strong> {{ createdOrder.packageNumber }}</p>
+  </div>
+</form>

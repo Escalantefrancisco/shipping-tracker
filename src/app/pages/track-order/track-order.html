@@ -1,0 +1,25 @@
+<h2>Rastrear Orden</h2>
+<form [formGroup]="trackForm" (ngSubmit)="trackOrder()">
+  <label>Número de paquete:</label>
+  <input formControlName="packageNumber" />
+  <button type="submit">Buscar</button>
+</form>
+<div *ngIf="foundOrder" class="result-card">
+  <h3>Datos del paquete:</h3>
+  <div class="result-fields">
+    <div><strong>Número de paquete:</strong> {{ foundOrder.packageNumber }}</div>
+    <div><strong>Remitente:</strong> {{ foundOrder.senderName }}</div>
+    <div><strong>Dirección de entrega:</strong> {{ foundOrder.deliveryAddress }}</div>
+    <div><strong>Email:</strong> {{ foundOrder.email }}</div>
+    <div><strong>Descripción:</strong> {{ foundOrder.description }}</div>
+    <div><strong>Estado:</strong> {{ foundOrder.status }}</div>
+    <div *ngIf="foundOrder.updates && foundOrder.updates.length">
+      <strong>Historial de actualizaciones:</strong>
+      <ul>
+        <li *ngFor="let update of foundOrder.updates">
+          {{ update.date }} - {{ update.status }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

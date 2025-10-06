@@ -1,0 +1,76 @@
+form {
+	background: var(--primary-bg-light);
+	padding: 2rem 2rem 1.5rem 2rem;
+	border-radius: 16px;
+	box-shadow: 0 2px 16px #0002;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+	min-width: 320px;
+	max-width: 400px;
+	margin: 0 auto;
+}
+label {
+	color: var(--secondary-text);
+	font-size: 1rem;
+	font-weight: 500;
+	margin-bottom: 0.3rem;
+}
+input, textarea, select {
+	background: var(--input-bg);
+	color: var(--primary-text);
+	border: 1.5px solid var(--input-border);
+	border-radius: 8px;
+	padding: 0.7rem 1rem;
+	font-size: 1rem;
+	outline: none;
+	transition: border 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+	border-color: var(--input-focus);
+}
+button {
+	background: var(--primary-accent);
+	color: var(--primary-bg-light);
+	border: none;
+	border-radius: 8px;
+	padding: 0.8rem 1.5rem;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	box-shadow: 0 2px 8px #0002;
+	transition: background 0.2s, color 0.2s;
+}
+button:hover {
+	background: var(--primary-accent-light);
+	color: var(--primary-bg-dark);
+}
+.result-card {
+  background: var(--primary-bg-light);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #0003;
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  margin: 2rem auto 0 auto;
+  max-width: 500px;
+  color: var(--primary-text);
+}
+.result-fields > div {
+  margin-bottom: 0.7rem;
+  font-size: 1.08rem;
+}
+.result-fields strong {
+  color: var(--primary-accent);
+  font-weight: 600;
+}
+.result-fields ul {
+  background: var(--primary-bg);
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  margin-top: 0.5rem;
+  color: var(--primary-text);
+  box-shadow: 0 2px 8px #0001;
+}
+.result-fields li {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
